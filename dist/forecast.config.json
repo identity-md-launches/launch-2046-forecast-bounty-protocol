@@ -1,0 +1,40 @@
+{
+  "schemaVersion": 1,
+  "chain": {
+    "id": 1,
+    "name": "Ethereum",
+    "nativeCurrency": { "name": "Ether", "symbol": "ETH", "decimals": 18 },
+    "rpcUrl": "https://ethereum-rpc.publicnode.com",
+    "explorerUrl": "https://etherscan.io"
+  },
+  "contracts": {
+    "bounty": {
+      "address": "",
+      "deploymentBlock": "",
+      "abi": [
+        "function getBounty(uint256 id) view returns (string question, uint256 reward, uint256 deadline, string source, address resolver, uint256 bond, uint256 forecastCount, uint8 state, int256 trueValue, int256 winningForecast, address winner)",
+        "function getPosition(uint256 id, address participant) view returns (bool submitted, uint256 bondLocked, bool canWithdraw, bool canClaim)",
+        "function getForecasts(uint256 id) view returns ((address submitter, int256 value)[])",
+        "function createBounty(string question, uint256 reward, uint256 deadline, string source) returns (uint256 id)",
+        "function submitForecast(uint256 id, int256 value)",
+        "function withdrawBond(uint256 id)",
+        "function claimReward(uint256 id)",
+        "event BountyCreated(uint256 indexed id, address indexed creator, string question, uint256 reward, uint256 deadline, string source, address resolver, uint256 bond)",
+        "event ForecastSubmitted(uint256 indexed id, address indexed forecaster, uint256 bond)",
+        "event BountyResolved(uint256 indexed id, int256 trueValue, address winner, int256 winningForecast)",
+        "event BondWithdrawn(uint256 indexed id, address indexed participant, uint256 amount)",
+        "event RewardClaimed(uint256 indexed id, address indexed winner, uint256 amount)"
+      ]
+    },
+    "token": {
+      "address": "",
+      "abi": [
+        "function symbol() view returns (string)",
+        "function decimals() view returns (uint8)",
+        "function allowance(address owner, address spender) view returns (uint256)",
+        "function approve(address spender, uint256 amount) returns (bool)"
+      ]
+    }
+  },
+  "logChunkSize": 10000
+}
